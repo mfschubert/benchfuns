@@ -1,4 +1,4 @@
-"""Tests for the hybrid surrogate.
+"""Tests for the benchmark functions.
 
 Copyright (c) 2025 Martin F. Schubert
 """
