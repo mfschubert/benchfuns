@@ -29,9 +29,9 @@ tests = [
     "pytest-subtests",
 ]
 dev = [
+    "benchfuns[tests]",
     "bump-my-version",
     "darglint",
-    "hybridmodel[tests]",
     "isort",
     "mypy",
     "pre-commit",
