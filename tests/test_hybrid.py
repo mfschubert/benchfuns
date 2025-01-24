@@ -26,11 +26,18 @@ class BenchmarkFunctionTest(unittest.TestCase):
         y = benchfuns.lp_norm(x)
         self.assertSequenceEqual(y.shape, ())
 
-    def test_rosenbrock(self):
-        d = 1  # 1D only
+    @parameterized.expand([1, 2, 10])
+    def test_rosenbrock(self, d):
         x = jnp.linspace(-1, 1, d)
         self.assertSequenceEqual(x.shape, (d,))
         y = benchfuns.rosenbrock(x)
+        self.assertSequenceEqual(y.shape, ())
+
+    def test_rosenbrock_2d(self):
+        d = 2  # 2D only
+        x = jnp.linspace(-1, 1, d)
+        self.assertSequenceEqual(x.shape, (d,))
+        y = benchfuns.rosenbrock_2d(x)
         self.assertSequenceEqual(y.shape, ())
 
     def test_tensor_product(self):

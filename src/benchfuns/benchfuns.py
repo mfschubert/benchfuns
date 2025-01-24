@@ -28,6 +28,13 @@ def rosenbrock(x: jnp.ndarray) -> jnp.ndarray:
     return jnp.sum((x[1:] - x[:-1]) ** 2 + (x[:-1] - 1) ** 2)
 
 
+def rosenbrock_2d(x: jnp.ndarray) -> jnp.ndarray:
+    """Evaluate the 2D Rosenbrock benchmark function at `x`."""
+    assert x.shape == (2,)
+    x0, x1 = x
+    return (1 - x0) ** 2 + 100 * (x1 - x0**2) ** 2
+
+
 def tensor_product(x: jnp.ndarray, a: float = 0.5) -> jnp.ndarray:
     """Evaluate the tensor product benchmark function at `x`."""
     assert x.ndim == 1
